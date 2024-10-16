@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список Фильмов</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>Список Фильмов</h1>
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+    <a href="/parse">Разобрать и сохранить фильмы</a>
+    <div class="movies-container">
+        {% for movie in movies %}
+            <div class="movie-card">
+                {% if movie.image_url %}
+                    <img src="{{ movie.image_url }}" alt="{{ movie.title }}" class="movie-image">
+                {% endif %}
+                <h2>{{ movie.title }}</h2>
+                <p>{{ movie.description }}</p>
+                <p>Рейтинг: {{ movie.rating }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

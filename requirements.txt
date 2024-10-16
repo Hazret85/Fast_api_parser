@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+requests
+bs4
+pydantic
+aiofiles
+jinja2
+lxml
